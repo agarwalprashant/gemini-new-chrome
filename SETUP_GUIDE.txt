@@ -1,0 +1,129 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    GEMINI LIVE ASSISTANT - SETUP GUIDE                        ║
+║                          Chrome Extension Source Code                         ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+Thank you for your purchase! This guide will help you set up the extension.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️  CRITICAL STEP - MUST BE COMPLETED BEFORE INSTALLATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔑 STEP 1: GET YOUR GEMINI API KEY
+───────────────────────────────────────────────────────────────────────────────
+1. Visit: https://aistudio.google.com/apikey
+2. Sign in with your Google account
+3. Click "Create API Key" or "Get API Key"
+4. Copy the API key (looks like: AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX)
+
+
+📝 STEP 2: ADD YOUR API KEY TO THE CODE
+───────────────────────────────────────────────────────────────────────────────
+1. Open the file: sidepanel.js
+   (Use any text editor: VS Code, Notepad++, Sublime Text, or even Notepad)
+
+2. Find LINE 58 which says:
+   this.apiKey = '';
+
+3. Add your API key between the quotes:
+   this.apiKey = 'AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+
+4. SAVE THE FILE (Ctrl+S or Cmd+S)
+
+   Example:
+   --------
+   Before: this.apiKey = '';
+   After:  this.apiKey = 'AIzaSyDEMOKEY123456789ABCDEFGHIJKLMNOP';
+
+⚠️  THE EXTENSION WILL NOT WORK WITHOUT COMPLETING THIS STEP!
+
+
+🔧 STEP 3: INSTALL IN CHROME
+───────────────────────────────────────────────────────────────────────────────
+1. Open Google Chrome
+2. Go to: chrome://extensions/
+3. Turn ON "Developer mode" (toggle in top-right corner)
+4. Click "Load unpacked" button (top-left)
+5. Select the folder containing these files
+6. Done! The extension icon will appear in your toolbar
+
+
+🚀 STEP 4: START USING IT
+───────────────────────────────────────────────────────────────────────────────
+1. Click the extension icon in Chrome toolbar
+2. Click the blue Play button (▶) to start
+3. Allow microphone and screen recording permissions
+4. Start speaking to the AI!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 QUICK REFERENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+File to Edit:     sidepanel.js
+Line Number:      Line 58
+What to Change:   this.apiKey = '';  →  this.apiKey = 'YOUR_API_KEY_HERE';
+Must Save:        Yes! (Ctrl+S or Cmd+S)
+
+Get API Key:      https://aistudio.google.com/apikey
+Chrome Version:   114 or higher required
+Extensions Page:  chrome://extensions/
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❓ COMMON ISSUES & SOLUTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Problem: "API key not found" or connection errors
+Solution: Double-check that you:
+          - Added your API key to sidepanel.js line 58
+          - Put it between the quotes: 'YOUR_KEY_HERE'
+          - Saved the file after editing
+          - Reloaded the extension in chrome://extensions/
+
+Problem: Microphone not working
+Solution: - Allow microphone permission when Chrome asks
+          - Check Chrome settings: chrome://settings/content/microphone
+          - Make sure no other app is using your microphone
+
+Problem: Screen capture not working
+Solution: - Allow screen recording permission when prompted
+          - On Mac: System Preferences → Security → Screen Recording → Chrome
+          - On Windows: Check Chrome has screen capture permissions
+
+Problem: Extension won't install
+Solution: - Make sure you're using Chrome 114 or newer
+          - Check version at: chrome://version/
+          - Enable "Developer mode" in chrome://extensions/
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 TIPS & NOTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Your API key stays on your computer (stored in the code only)
+✓ The extension captures your screen every 3 seconds during conversations
+✓ Voice and screen data are sent to Google's Gemini API only (not stored)
+✓ You can check API usage and costs at: https://ai.google.dev/pricing
+✓ For detailed help, see README.md in this folder
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔐 PRIVACY & SECURITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Keep your API key private (don't share it)
+- API key is only stored in your local files
+- No conversation history is saved by the extension
+- All data processing happens via Google's Gemini API
+- Review Google's terms: https://ai.google.dev/terms
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Need more help? Check the detailed README.md file for comprehensive
+documentation, troubleshooting steps, and technical details.
+
+Happy browsing with your AI assistant! 🚀
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

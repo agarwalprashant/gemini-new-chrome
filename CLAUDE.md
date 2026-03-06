@@ -1,0 +1,1 @@
+always give answers in simple hinglish(a mix of hindi and english)
