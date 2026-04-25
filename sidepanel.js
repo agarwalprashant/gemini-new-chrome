@@ -55,7 +55,7 @@ class GeminiLiveAssistant {
     // 3. Example: this.apiKey = 'AIzaSyDEMOKEY123456789ABCDEFGHIJKLMNOP';
     // 4. Save this file after making the change
     // ============================================================
-    this.apiKey = 'AIzaSyBULpQyBXSmLHzKsehVOHVL86caiphlRGY';  // <-- PUT YOUR API KEY HERE BETWEEN THE QUOTES
+    this.apiKey = 'AIzaSyC_Mex2weJTCFBqGnd8UGgUvPUxyuCfvMA';  // <-- PUT YOUR API KEY HERE BETWEEN THE QUOTES
     // ============================================================
 
     this.session = null;
@@ -260,7 +260,7 @@ class GeminiLiveAssistant {
       
       this.genAI = new window.GoogleGenAI({ 
         apiKey: this.apiKey, 
-        apiVersion: 'v1alpha' 
+        apiVersion: 'v1beta'
       });
       
       this.updateStatus('Ready to chat');
@@ -1311,7 +1311,7 @@ class GeminiLiveAssistant {
       }
       
       this.session = await this.genAI.live.connect({
-        model: 'gemini-2.0-flash-live-001',
+        model: 'gemini-2.5-flash-native-audio-preview-12-2025',
         config: {
           responseModalities: ['AUDIO']
         },

@@ -90,12 +90,17 @@ async function handleSidePanelToggle(tabId, sendResponse) {
     
     if (newState) {
       // Opening the side panel
-      await chrome.sidePanel.open({ tabId: tabId });
-      console.log(`[handleSidePanelToggle] Side panel opened for tab ${tabId}`);
+      try {
+        await chrome.sidePanel.open({ tabId: tabId });
+        console.log(`[handleSidePanelToggle] Side panel opened for tab ${tabId}`);
+      } catch (e) {
+        // Panel may already be open (opened via toolbar icon) — that's fine
+        console.log(`[handleSidePanelToggle] sidePanel.open note: ${e.message}`);
+      }
       sidePanelState.set(tabId, true);
-      
-      sendResponse({ 
-        status: "Side panel opened", 
+
+      sendResponse({
+        status: "Side panel opened",
         isOpen: true,
         action: "opened"
       });

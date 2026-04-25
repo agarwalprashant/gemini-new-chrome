@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Clone",
+  "version": "1.0.0",
+  "action": {},
+  "side_panel": { "default_path": "sidepanel.html" },
+  "background": { "service_worker": "src/background.js" },
+  "permissions": ["sidePanel", "tabs", "tabCapture", "desktopCapture", "storage", "scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [{ "js": ["src/content.js"], "matches": ["<all_urls>"] }],
+  "web_accessible_resources": [
+    { "resources": ["src/permission.html", "src/permission.js", "src/audio-processor.js"], "matches": ["<all_urls>"] }
+  ]
+}

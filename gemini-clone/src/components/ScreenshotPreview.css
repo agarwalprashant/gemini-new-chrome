@@ -1,0 +1,43 @@
+.screenshot-preview {
+  border-top: 1px solid #2a2a3e;
+  background: #1a1a2e;
+  flex-shrink: 0;
+}
+
+.screenshot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+}
+
+.screenshot-source {
+  font-size: 11px;
+  color: #888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.screenshot-clear {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 4px;
+  line-height: 1;
+  border-radius: 3px;
+}
+
+.screenshot-clear:hover {
+  color: #f44336;
+  background: rgba(244, 67, 54, 0.1);
+}
+
+.screenshot-img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  display: block;
+}

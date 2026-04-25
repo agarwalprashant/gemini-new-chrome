@@ -1,0 +1,53 @@
+.apikey-wrap {
+  padding: 8px 12px;
+  border-bottom: 1px solid #2a2a3e;
+}
+
+.apikey-toggle {
+  font-size: 11px;
+  padding: 3px 8px;
+  background: #2a2a3e;
+  border: none;
+  border-radius: 4px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.apikey-toggle:hover {
+  color: #e0e0e0;
+}
+
+.apikey-box {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.apikey-input {
+  flex: 1;
+  background: #1e1e2e;
+  border: 1px solid #3a3a5e;
+  border-radius: 4px;
+  color: #e0e0e0;
+  font-size: 12px;
+  padding: 5px 8px;
+  outline: none;
+}
+
+.apikey-input:focus {
+  border-color: #7c9fff;
+}
+
+.apikey-save {
+  font-size: 12px;
+  padding: 5px 10px;
+  background: #4caf50;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.apikey-save:hover {
+  background: #43a047;
+}

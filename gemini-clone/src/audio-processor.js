@@ -6,10 +6,10 @@
 class AudioProcessor extends AudioWorkletProcessor {
   constructor(options) {
     super();
-    this.sampleRate = sampleRate;
-    this.targetSampleRate = options.processorOptions.targetSampleRate || 16000;
-    this.bufferSize = options.processorOptions.bufferSize || 4096;
-    const minInternalBufferSize = Math.ceil(this.bufferSize * (this.sampleRate / this.targetSampleRate)) + 128;
+    this.sampleRate = sampleRate; //it sets the microphones native sample rate.
+    this.targetSampleRate = options.processorOptions.targetSampleRate || 16000; // it sets the desired sample rate for the audio data that will be sent to the AI. in this case, it's 16kHz, which is a common sample rate for speech processing.
+    this.bufferSize = options.processorOptions.bufferSize || 4096; //  it also sets up a temporary storage place called internal buffer. this internal buffer is crucial because it temporarily holds the incoming microphone data. it stores it until there's enough audio to process and send to the AI
+    const minInternalBufferSize = Math.ceil(this.bufferSize * (this.sampleRate / this.targetSampleRate)) + 128; //
     this._internalBuffer = new Float32Array(Math.max(minInternalBufferSize, this.bufferSize * 2));
     this._internalBufferIndex = 0;
     this.isProcessing = false;

@@ -1,0 +1,97 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #1e1e2e;
+  border-bottom: 1px solid #2a2a3e;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Breathing indicator */
+.breathing-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #555;
+  flex-shrink: 0;
+}
+
+.breathing-indicator.idle {
+  background: #555;
+}
+
+.breathing-indicator.recording {
+  background: #4caf50;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.breathing-indicator.thinking {
+  background: #2196f3;
+  animation: pulse 0.8s ease-in-out infinite;
+}
+
+.breathing-indicator.error {
+  background: #f44336;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+/* Status text */
+.status-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.status-main {
+  font-size: 13px;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+.status-sub {
+  font-size: 11px;
+  color: #888;
+}
+
+/* Toggle button */
+.toggle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  padding: 0;
+}
+
+.toggle-btn.play {
+  background: #4caf50;
+  color: white;
+}
+
+.toggle-btn.play:hover {
+  background: #43a047;
+}
+
+.toggle-btn.stop {
+  background: #f44336;
+  color: white;
+}
+
+.toggle-btn.stop:hover {
+  background: #e53935;
+}
